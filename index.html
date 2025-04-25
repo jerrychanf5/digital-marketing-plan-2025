@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广州数字营销事业部2025年新媒体+AI能力训战方案</title>
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #3b82f6;
+            --light-blue: #f0f7ff;
+            --dark-blue: #1e40af;
+            --accent-blue: #60a5fa;
+            --background: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #64748b;
+            --success-green: #10b981;
+            --warning-yellow: #f59e0b;
+            --info-purple: #8b5cf6;
+            --section-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--text-light);
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--section-shadow);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--section-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+        }
+        
+        .section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary-blue);
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent-blue);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            background: var(--primary-blue);
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'%3E%3C/path%3E%3C/svg%3E");
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'%3E%3C/path%3E%3C/svg%3E");
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+        }
+        
+        h3 {
+            color: var(--dark-blue);
+            font-size: 1.4em;
+            margin: 30px 0 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h3::before {
+            content: '◆';
+            color: var(--accent-blue);
+            font-size: 0.8em;
+        }
+        
+        ul {
+            padding-left: 0;
+            margin-bottom: 25px;
+            list-style: none;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 28px;
+            transition: var(--transition);
+        }
+        
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background-color: var(--accent-blue);
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+        }
+        
+        .card {
+            background-color: var(--light-blue);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary-blue);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, transparent 50%, rgba(96, 165, 250, 0.1) 50%);
+        }
+        
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 50, 120, 0.1);
+        }
+        
+        .card-title {
+            color: var(--dark-blue);
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 6px;
+            width: fit-content;
+        }
+        
+        .card-title::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-color: var(--primary-blue);
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z'%3E%3C/path%3E%3C/svg%3E");
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 10V3L4 14h7v7l9-11h-7z'%3E%3C/path%3E%3C/svg%3E");
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 25px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 50, 120, 0.1);
+            background: white;
+        }
+        
+        th, td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        thead {
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+        }
+        
+        thead th {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+        
+        tbody tr {
+            transition: var(--transition);
+        }
+        
+        tbody tr:hover {
+            background-color: var(--light-blue);
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        tbody tr:nth-child(even):hover {
+            background-color: var(--light-blue);
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: var(--primary-blue);
+            background: linear-gradient(120deg, rgba(96, 165, 250, 0.2) 0%, rgba(96, 165, 250, 0.2) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.4em;
+            background-position: 0 88%;
+            transition: var(--transition);
+            padding: 0 4px;
+        }
+        
+        .highlight:hover {
+            background-size: 100% 100%;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            color: var(--text-gray);
+            font-size: 0.95em;
+            border-top: 1px solid #e2e8f0;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--section-shadow);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--section-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card.success {
+            border-top: 4px solid var(--success-green);
+        }
+        
+        .stat-card.warning {
+            border-top: 4px solid var(--warning-yellow);
+        }
+        
+        .stat-card.info {
+            border-top: 4px solid var(--info-purple);
+        }
+        
+        .stat-title {
+            font-size: 0.9em;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .stat-desc {
+            font-size: 0.9em;
+            color: var(--text-gray);
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-blue);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--section-shadow);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-blue);
+        }
+        
+        .timeline-date {
+            font-size: 0.9em;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content {
+            color: var(--text-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            header {
+                padding: 40px 15px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            th, td {
+                padding: 12px 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline-item::before {
+                left: -24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>广州数字营销事业部2025年新媒体+AI能力训战方案</h1>
+            <p>小步快跑·体系化版</p>
+        </header>
+        
+        <div class="section">
+            <h2>一、核心目标与框架</h2>
+            <div class="stats-grid">
+                <div class="stat-card success">
+                    <div class="stat-title">组织能力</div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-desc">标准化能力模型建设</div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-title">能力掌握</div>
+                    <div class="stat-value">5+</div>
+                    <div class="stat-desc">复合技能培养</div>
+                </div>
+                <div class="stat-card info">
+                    <div class="stat-title">训战成果</div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-desc">核心技能掌握率</div>
+                </div>
+            </div>
+            <p><strong>核心目标</strong>：以"能力转型+业绩增长"为双轮驱动，通过"5-12月分阶段、主题化训战"推动团队从"传统数字营销"向"新媒体+AI融合型"能力升级，实现：</p>
+            <ul>
+                <li>组织能力提升：建立"新媒体运营（矩阵/直播）+AI工具赋能（创意工厂/AI直播机/AI销售员/巨量投流工具）"的标准化能力模型；</li>
+                <li>能力掌握：掌握"新媒体+AI"复合技能（如直播投流+AI优化、矩阵运营+AI内容生产、AI+话术优化、AI+数据分析、AI+服务报告制作）；</li>
+                <li>训战成果：100%掌握核心技能或完成典型新业务项目交付或完成新业务订单签约。</li>
+            </ul>
+            <p><strong>训战框架</strong>：以"新媒体平台实操+AI工具赋能"为核心，分4期主题化训战（5-12月），每期聚焦1个核心场景（首期直播投流，后续逐步深化），通过"理论学习-技能训练-项目实战-复盘迭代"四步闭环，确保能力与业绩双提升。</p>
+        </div>
+        
+        <div class="section">
+            <h2>二、训战对象与周期</h2>
+            <ul>
+                <li>对象：16人核心团队（客户经理4人、客户成功经理5人、客户成功顾问7人），跨岗位分组（每组4-5人，含多角色协作）。</li>
+                <li>周期：2025年5月-12月（分4期，每期6-8周，首期5月重点详细设计，后续期次主题化规划）。</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>三、训战内容设计（分4期，首期详细）</h2>
+            
+            <h3>首期：直播投流+AI融合训战（预计5月到6月中，共计5周）</h3>
+            
+            <div class="card">
+                <div class="card-title">主题</div>
+                <p>"直播投流+AI提效"——掌握"地产直播投流全流程+AI工具协同"能力，快速产出客户签约与交付案例。</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">目标</div>
+                <ul>
+                    <li>能力：① 锁定成员掌握"直播投流策略制定-代投执行-复盘优化"全流程，掌握AI工具与投流工作的协同操作；② 锁定成员掌握新媒体直播服务销售能力，掌握AI赋能案例讲解能力。</li>
+                    <li>业务：签约X家地产客户（含直播投流+AI工具），交付2个标杆案例（如"某项目投流线索成本降低XX%"，或达成XX组到访，XX组成交）。</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">详细设计</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>阶段</th>
+                            <th>时间</th>
+                            <th>核心动作</th>
+                            <th>岗位分工与产出</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>启动期</td>
+                            <td>5月第一周</td>
+                            <td>
+                                目标对齐会：明确首期目标、分工（客户经理：能力训练与客户攻坚；成功经理：投流执行；顾问：AI支持）；<br>
+                                业务研究：锁定4家潜在商机客户的项目，进行业务信息收集与研讨分享、方案共创；<br>
+                                学习资源：内部投流专家+外部明源云讲师+外部学习资料。
+                            </td>
+                            <td>输出《首期训战任务表》《项目业务研究清单》。</td>
+                        </tr>
+                        <tr>
+                            <td>学习期</td>
+                            <td>第二周</td>
+                            <td>
+                                直播投流核心技能：<br>
+                                - 客户经理：学习"地产客户投流痛点挖掘话术""直播投流方案及案例讲解"；<br>
+                                - 成功经理/顾问：学习"巨量操作（定向/出价等）""投流数据复盘（CTR/CVR/ROI）"；<br>
+                                实战演练：老师一带一进行投流实操。
+                            </td>
+                            <td>输出《直播投流操作清单》《直播服务总结》等。</td>
+                        </tr>
+                        <tr>
+                            <td>实战期</td>
+                            <td>第三周~第四周</td>
+                            <td>
+                                客户攻坚：<br>
+                                - 客户经理：锁定项目清单，1v1拜访客户，输出《交流情况反馈及策略计划》；<br>
+                                项目交付：<br>
+                                - 成功经理/顾问：常态化执行投流代投（每日盯盘、调整策略、话术优化）。
+                            </td>
+                            <td>完成拜访故事分享；完成订单签约；完成项目交付。</td>
+                        </tr>
+                        <tr>
+                            <td>复盘期</td>
+                            <td>第五周</td>
+                            <td>
+                                成果验收：召开"首期成果会"，展示签约数据、交付案例、能力提升（如成功经理投流ROI操作能力提升40%）；<br>
+                                经验沉淀：整理《直播投流+AI服务SOP》《常见问题解决清单》；<br>
+                                下期规划：确定6月主题（新媒体矩阵+AI），锁定意向客户。
+                            </td>
+                            <td>输出《首期训战成果报告》《二期训战计划表》。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>二期：新媒体矩阵+AI运营训战（预计6月中到8月，共计5周）</h3>
+            <div class="card">
+                <div class="card-title">主题</div>
+                <p>"矩阵获客+AI提效"——掌握"地产新媒体矩阵（抖音/视频号/小红书）搭建+AI内容生产"能力，提升客户矩阵获客效率。</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">目标</div>
+                <ul>
+                    <li>能力：锁定成员掌握"矩阵号定位（项目号/销售号/资讯号）-内容生产-流量运营"全流程，掌握AI创意工厂批量生成矩阵内容；</li>
+                    <li>业务：签约X家客户（矩阵运营+AI工具），交付1个标杆案例（如"某项目矩阵号常态化矩阵发布XX篇作品，曝光达到XXX，月获客XX组"）；</li>
+                    <li>个人：客户经理矩阵服务价值包装能力提升，成功经理/顾问矩阵内容运营效率提升。</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">重点内容</div>
+                <ul>
+                    <li>学习：矩阵号定位逻辑（如销售号"人设化"提升转化）、AI创意工厂热点选题与素材生成；</li>
+                    <li>实战：为客户搭建"项目号+销售号+资讯号"矩阵，用AI工具日更5条短视频，提升账号曝光与留资；</li>
+                    <li>输出：《矩阵号运营SOP》《AI内容生产指南》。</li>
+                </ul>
+            </div>
+            
+            <h3>三期：AI工具深度赋能训战（8月中旬到10月中旬）</h3>
+            <div class="card">
+                <div class="card-title">主题</div>
+                <p>"AI工具+业务深度融合"——掌握"AI工具（销售员/直播机/投流系统）定制化配置"能力，解决客户个性化需求（如豪宅项目AI情绪话术、改善盘AI投流定向）。</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">目标</div>
+                <ul>
+                    <li>能力：锁定成员掌握"AI工具需求诊断-定制配置-效果验证"全流程，能独立解决客户AI工具解决营销业务问题；</li>
+                    <li>业务：签约X家客户（AI工具专项服务），交付2个标杆案例（如"某项目AI销售员留资率提升15%,留资量增长30%"）；</li>
+                    <li>个人：成功经理/顾问AI工具价值交付能力提升，客户高层价值感知提升。</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">重点内容</div>
+                <ul>
+                    <li>学习：AI工具底层逻辑（如AI销售员的"潜客识别模型"）、地产场景定制化方法（如知识库搭建、话术调整）；</li>
+                    <li>实战：为客户定制AI工具（如AI销售员情绪话术库、AI直播机走播脚本），验证留资/转化效果；</li>
+                    <li>输出：《AI工具定制化SOP》《地产场景-工具匹配表》。</li>
+                </ul>
+            </div>
+            
+            <h3>四期：待定，全链路融合提效训战</h3>
+            <div class="card">
+                <div class="card-title">主题</div>
+                <p>"新媒体+AI+投流全链路提效"——整合前3期能力，实现"矩阵获客+直播投流+AI工具"全链路服务，打造部门"全案服务标杆"。</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">目标</div>
+                <ul>
+                    <li>能力：锁定成员掌握"全链路服务需求诊断-方案设计-交付落地"能力，能输出"全案服务方案"；</li>
+                    <li>业务：签约X家头部客户（全案服务），交付1个年度标杆案例（如"某房企全链路服务月获客XX组，到访XX组，成本降低35%"）；</li>
+                    <li>个人：全员复合能力达标（新媒体+AI+投流），X人晋升"全案服务专家"。</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">重点内容</div>
+                <ul>
+                    <li>学习：全链路服务逻辑（矩阵曝光→直播投流→AI工具转化）、跨模块协同方法；</li>
+                    <li>实战：为头部客户设计"矩阵运营+直播投流+AI工具"全案，推动获客与降本双目标；</li>
+                    <li>输出：《全链路服务SOP》《年度标杆案例集》。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>四、成就奖励机制（能力+业绩双挂钩）</h2>
+            <p>以"能力提升值+业务贡献值"为双维度，每期单独奖励，激发小步快跑动力。</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>奖励类型</th>
+                        <th>规则设计</th>
+                        <th>示例（首期）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>能力突破奖</td>
+                        <td>全员投票，最佳能力突破奖励XX元。</td>
+                        <td>某成员能力提升显著，获XX元。</td>
+                    </tr>
+                    <tr>
+                        <td>业务增量奖</td>
+                        <td>按签约客户数/金额奖励。</td>
+                        <td>某客户经理签约X家客户，获XX元。</td>
+                    </tr>
+                    <tr>
+                        <td>标杆案例奖</td>
+                        <td>每期输出可复制的标杆案例。</td>
+                        <td>某小组输出首期标杆案例，获XX元。</td>
+                    </tr>
+                    <tr>
+                        <td>团队协作奖</td>
+                        <td>团队协作完成从签约-交付-标杆全流程。</td>
+                        <td>团队协作达标，获XX元团队奖。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>五、执行保障</h2>
+            <ul>
+                <li>组织保障：每期设1名训战负责人（部门负责人轮值）。</li>
+                <li>工具保障：开放巨量、AI工具教程及账号权限。</li>
+                <li>文化营造：每期发布"训战战报"（进度/成果），设置"能力成长墙"（张贴个人能力提升数据），营造学习成长氛围。</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            © 2025 广州数字营销事业部 - 新媒体+AI能力训战计划
+        </div>
+    </div>
+</body>
+</html>
