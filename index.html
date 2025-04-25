@@ -535,29 +535,87 @@
             }
             
             .stats-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                display: flex;
                 gap: 12px;
                 margin: 20px 0;
-                padding: 0;
+                padding: 0 0 10px 0;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE and Edge */
+            }
+            
+            .stats-grid::-webkit-scrollbar {
+                display: none; /* Chrome, Safari and Opera */
             }
             
             .stat-card {
+                flex: 0 0 calc(33.333% - 8px);
+                min-width: 120px;
                 padding: 16px;
-                min-width: 0;
+                scroll-snap-align: start;
+            }
+            
+            .table-container {
                 width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                position: relative;
+                background: var(--card-bg);
+                border-radius: var(--border-radius);
+                margin: 20px 0;
             }
             
-            .stat-title {
+            table {
+                width: 100%;
+                min-width: 600px; /* 确保表格有最小宽度 */
+                margin: 0;
+            }
+            
+            th, td {
+                white-space: normal;
+                padding: 12px;
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+            
+            /* 添加滑动提示 */
+            .table-container::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 30px;
+                background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
+                pointer-events: none;
+            }
+            
+            .scroll-indicator {
+                display: block;
+                text-align: center;
+                color: var(--text-gray);
                 font-size: 0.8em;
+                padding: 5px 0;
+                margin: -5px 0 10px;
             }
             
-            .stat-value {
-                font-size: 1.6em;
+            /* 优化表格列宽 */
+            th:nth-child(1), td:nth-child(1) {
+                min-width: 80px; /* 阶段列 */
             }
             
-            .stat-desc {
-                font-size: 0.8em;
+            th:nth-child(2), td:nth-child(2) {
+                min-width: 90px; /* 时间列 */
+            }
+            
+            th:nth-child(3), td:nth-child(3) {
+                min-width: 200px; /* 核心动作列 */
+            }
+            
+            th:nth-child(4), td:nth-child(4) {
+                min-width: 150px; /* 岗位分工与产出列 */
             }
             
             .card {
@@ -607,8 +665,32 @@
                 padding: calc(var(--spacing-mobile) * 0.8);
             }
             
+            .stats-grid {
+                gap: 8px;
+            }
+            
+            .stat-card {
+                padding: 12px;
+            }
+            
+            .stat-title {
+                font-size: 0.75em;
+            }
+            
+            .stat-value {
+                font-size: 1.4em;
+            }
+            
+            .stat-desc {
+                font-size: 0.75em;
+            }
+            
+            table {
+                min-width: 500px; /* 稍微减小最小宽度 */
+            }
+            
             th, td {
-                padding: 8px;
+                padding: 10px;
                 font-size: 0.85em;
             }
             
