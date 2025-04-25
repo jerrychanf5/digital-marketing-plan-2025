@@ -558,26 +558,48 @@
             }
             
             .table-container {
-                width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                position: relative;
-                background: var(--card-bg);
-                border-radius: var(--border-radius);
-                margin: 20px 0;
+                margin: 15px -15px; /* 让表格容器略微超出父容器 */
+                width: calc(100% + 30px); /* 补偿负边距 */
+                border-radius: 0; /* 移除圆角 */
+            }
+            
+            .section .table-container {
+                background: transparent;
+                box-shadow: none;
             }
             
             table {
-                width: 100%;
-                min-width: 600px; /* 确保表格有最小宽度 */
+                background: var(--card-bg);
                 margin: 0;
+                min-width: 800px; /* 确保在移动端有固定的最小宽度 */
             }
             
             th, td {
-                white-space: normal;
                 padding: 12px;
                 font-size: 0.9em;
+                white-space: normal;
                 line-height: 1.4;
+            }
+            
+            /* 设置列宽 */
+            th:nth-child(1), td:nth-child(1) {
+                width: 100px; /* 阶段列 */
+                min-width: 100px;
+            }
+            
+            th:nth-child(2), td:nth-child(2) {
+                width: 120px; /* 时间列 */
+                min-width: 120px;
+            }
+            
+            th:nth-child(3), td:nth-child(3) {
+                width: 300px; /* 核心动作列 */
+                min-width: 300px;
+            }
+            
+            th:nth-child(4), td:nth-child(4) {
+                width: 200px; /* 岗位分工与产出列 */
+                min-width: 200px;
             }
             
             /* 添加滑动提示 */
@@ -587,9 +609,10 @@
                 top: 0;
                 right: 0;
                 bottom: 0;
-                width: 30px;
-                background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
+                width: 40px;
+                background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9));
                 pointer-events: none;
+                z-index: 2;
             }
             
             .scroll-indicator {
@@ -597,25 +620,12 @@
                 text-align: center;
                 color: var(--text-gray);
                 font-size: 0.8em;
-                padding: 5px 0;
-                margin: -5px 0 10px;
-            }
-            
-            /* 优化表格列宽 */
-            th:nth-child(1), td:nth-child(1) {
-                min-width: 80px; /* 阶段列 */
-            }
-            
-            th:nth-child(2), td:nth-child(2) {
-                min-width: 90px; /* 时间列 */
-            }
-            
-            th:nth-child(3), td:nth-child(3) {
-                min-width: 200px; /* 核心动作列 */
-            }
-            
-            th:nth-child(4), td:nth-child(4) {
-                min-width: 150px; /* 岗位分工与产出列 */
+                padding: 8px 0;
+                background: var(--card-bg);
+                margin: 0;
+                position: sticky;
+                left: 0;
+                width: 100%;
             }
             
             .card {
@@ -685,13 +695,19 @@
                 font-size: 0.75em;
             }
             
-            table {
-                min-width: 500px; /* 稍微减小最小宽度 */
+            .table-container {
+                margin: 10px -10px;
+                width: calc(100% + 20px);
             }
             
             th, td {
                 padding: 10px;
                 font-size: 0.85em;
+            }
+            
+            .scroll-indicator {
+                font-size: 0.75em;
+                padding: 6px 0;
             }
             
             .card-title {
@@ -817,17 +833,21 @@
         
         /* 优化表格样式 */
         .table-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
             margin: var(--spacing-desktop) 0;
+            box-shadow: var(--card-shadow);
         }
         
         table {
-            width: 100%;
             border-collapse: separate;
             border-spacing: 0;
+            width: 100%;
+            min-width: 800px; /* 确保表格有足够的最小宽度 */
             margin: 0;
         }
         
@@ -839,6 +859,9 @@
             text-align: left;
             font-size: 0.9em;
             letter-spacing: 0.5px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
         
         td {
@@ -846,6 +869,7 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             font-size: 0.95em;
             line-height: 1.6;
+            vertical-align: top;
         }
         
         tbody tr:hover {
