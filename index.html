@@ -506,9 +506,104 @@
             }
             
             .stats-grid {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-mobile);
-                margin: var(--spacing-mobile) 0;
+                display: flex;
+                overflow-x: auto;
+                gap: 15px;
+                padding: 10px 0;
+                margin: 15px -15px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE and Edge */
+            }
+            
+            .stats-grid::-webkit-scrollbar {
+                display: none; /* Chrome, Safari and Opera */
+            }
+            
+            .stat-card {
+                flex: 0 0 260px; /* 固定宽度，防止挤压 */
+                scroll-snap-align: start;
+                padding: 20px;
+                margin: 0;
+            }
+            
+            /* 优化表格列宽 */
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+            
+            /* 调整特定列的宽度 */
+            th:nth-child(1), td:nth-child(1) {
+                width: 80px; /* 阶段列 */
+                min-width: 80px;
+            }
+            
+            th:nth-child(2), td:nth-child(2) {
+                width: 90px; /* 时间列 */
+                min-width: 90px;
+            }
+            
+            th:nth-child(3), td:nth-child(3) {
+                min-width: 200px; /* 核心动作列 */
+            }
+            
+            th:nth-child(4), td:nth-child(4) {
+                min-width: 150px; /* 岗位分工与产出列 */
+            }
+            
+            /* 添加表格横向滚动指示器 */
+            .table-container {
+                position: relative;
+                overflow: hidden;
+                margin: 20px 0;
+            }
+            
+            .table-container::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 30px;
+                background: linear-gradient(to right, transparent, rgba(255,255,255,0.9));
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            
+            .table-container.has-scroll::after {
+                opacity: 1;
+            }
+            
+            /* 优化表格内容换行 */
+            td {
+                white-space: normal;
+                vertical-align: top;
+            }
+            
+            /* 添加滑动指示器 */
+            .scroll-indicator {
+                display: none;
+            }
+            
+            @media (max-width: 768px) {
+                .scroll-indicator {
+                    display: block;
+                    text-align: center;
+                    color: var(--text-gray);
+                    font-size: 0.8em;
+                    padding: 5px 0;
+                    margin-top: -5px;
+                    opacity: 0.7;
+                }
             }
             
             .card {
@@ -714,60 +809,63 @@
             
             <div class="card">
                 <div class="card-title">详细设计</div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>阶段</th>
-                            <th>时间</th>
-                            <th>核心动作</th>
-                            <th>岗位分工与产出</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>启动期</td>
-                            <td>5月第一周</td>
-                            <td>
-                                目标对齐会：明确首期目标、分工（客户经理：能力训练与客户攻坚；成功经理：投流执行；顾问：AI支持）；<br>
-                                业务研究：锁定4家潜在商机客户的项目，进行业务信息收集与研讨分享、方案共创；<br>
-                                学习资源：内部投流专家+外部明源云讲师+外部学习资料。
-                            </td>
-                            <td>输出《首期训战任务表》《项目业务研究清单》。</td>
-                        </tr>
-                        <tr>
-                            <td>学习期</td>
-                            <td>第二周</td>
-                            <td>
-                                直播投流核心技能：<br>
-                                - 客户经理：学习"地产客户投流痛点挖掘话术""直播投流方案及案例讲解"；<br>
-                                - 成功经理/顾问：学习"巨量操作（定向/出价等）""投流数据复盘（CTR/CVR/ROI）"；<br>
-                                实战演练：老师一带一进行投流实操。
-                            </td>
-                            <td>输出《直播投流操作清单》《直播服务总结》等。</td>
-                        </tr>
-                        <tr>
-                            <td>实战期</td>
-                            <td>第三周~第四周</td>
-                            <td>
-                                客户攻坚：<br>
-                                - 客户经理：锁定项目清单，1v1拜访客户，输出《交流情况反馈及策略计划》；<br>
-                                项目交付：<br>
-                                - 成功经理/顾问：常态化执行投流代投（每日盯盘、调整策略、话术优化）。
-                            </td>
-                            <td>完成拜访故事分享；完成订单签约；完成项目交付。</td>
-                        </tr>
-                        <tr>
-                            <td>复盘期</td>
-                            <td>第五周</td>
-                            <td>
-                                成果验收：召开"首期成果会"，展示签约数据、交付案例、能力提升（如成功经理投流ROI操作能力提升40%）；<br>
-                                经验沉淀：整理《直播投流+AI服务SOP》《常见问题解决清单》；<br>
-                                下期规划：确定6月主题（新媒体矩阵+AI），锁定意向客户。
-                            </td>
-                            <td>输出《首期训战成果报告》《二期训战计划表》。</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>阶段</th>
+                                <th>时间</th>
+                                <th>核心动作</th>
+                                <th>岗位分工与产出</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>启动期</td>
+                                <td>5月第一周</td>
+                                <td>
+                                    目标对齐会：明确首期目标、分工（客户经理：能力训练与客户攻坚；成功经理：投流执行；顾问：AI支持）；<br>
+                                    业务研究：锁定4家潜在商机客户的项目，进行业务信息收集与研讨分享、方案共创；<br>
+                                    学习资源：内部投流专家+外部明源云讲师+外部学习资料。
+                                </td>
+                                <td>输出《首期训战任务表》《项目业务研究清单》。</td>
+                            </tr>
+                            <tr>
+                                <td>学习期</td>
+                                <td>第二周</td>
+                                <td>
+                                    直播投流核心技能：<br>
+                                    - 客户经理：学习"地产客户投流痛点挖掘话术""直播投流方案及案例讲解"；<br>
+                                    - 成功经理/顾问：学习"巨量操作（定向/出价等）""投流数据复盘（CTR/CVR/ROI）"；<br>
+                                    实战演练：老师一带一进行投流实操。
+                                </td>
+                                <td>输出《直播投流操作清单》《直播服务总结》等。</td>
+                            </tr>
+                            <tr>
+                                <td>实战期</td>
+                                <td>第三周~第四周</td>
+                                <td>
+                                    客户攻坚：<br>
+                                    - 客户经理：锁定项目清单，1v1拜访客户，输出《交流情况反馈及策略计划》；<br>
+                                    项目交付：<br>
+                                    - 成功经理/顾问：常态化执行投流代投（每日盯盘、调整策略、话术优化）。
+                                </td>
+                                <td>完成拜访故事分享；完成订单签约；完成项目交付。</td>
+                            </tr>
+                            <tr>
+                                <td>复盘期</td>
+                                <td>第五周</td>
+                                <td>
+                                    成果验收：召开"首期成果会"，展示签约数据、交付案例、能力提升（如成功经理投流ROI操作能力提升40%）；<br>
+                                    经验沉淀：整理《直播投流+AI服务SOP》《常见问题解决清单》；<br>
+                                    下期规划：确定6月主题（新媒体矩阵+AI），锁定意向客户。
+                                </td>
+                                <td>输出《首期训战成果报告》《二期训战计划表》。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="scroll-indicator">← 左右滑动查看更多 →</div>
             </div>
             
             <h3>二期：新媒体矩阵+AI运营训战（预计6月中到8月，共计5周）</h3>
@@ -893,5 +991,38 @@
             © 2025 广州数字营销事业部 - 新媒体+AI能力训战计划
         </div>
     </div>
+    <script>
+        // 处理表格容器的滚动指示
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableContainers = document.querySelectorAll('.table-container');
+            
+            function updateScrollIndicator(container) {
+                const table = container.querySelector('table');
+                if (table.scrollWidth > container.clientWidth) {
+                    container.classList.add('has-scroll');
+                } else {
+                    container.classList.remove('has-scroll');
+                }
+            }
+            
+            tableContainers.forEach(container => {
+                updateScrollIndicator(container);
+                window.addEventListener('resize', () => updateScrollIndicator(container));
+            });
+            
+            // 处理统计卡片的滚动提示
+            const statsGrid = document.querySelector('.stats-grid');
+            if (statsGrid) {
+                let isScrolling;
+                statsGrid.addEventListener('scroll', () => {
+                    statsGrid.classList.add('is-scrolling');
+                    clearTimeout(isScrolling);
+                    isScrolling = setTimeout(() => {
+                        statsGrid.classList.remove('is-scrolling');
+                    }, 150);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
