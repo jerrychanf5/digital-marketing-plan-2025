@@ -661,6 +661,37 @@
                 font-size: 1em;
                 padding: 6px 15px;
             }
+            
+            /* 成就奖励机制表格的特定样式 */
+            .section:nth-of-type(4) .table-container {
+                margin: 15px -15px;
+                width: calc(100% + 30px);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .section:nth-of-type(4) table {
+                min-width: 600px;
+                width: 100%;
+            }
+            
+            .section:nth-of-type(4) th,
+            .section:nth-of-type(4) td {
+                min-width: 150px;
+                padding: 12px;
+                white-space: normal;
+                word-break: break-word;
+            }
+            
+            .section:nth-of-type(4) th:first-child,
+            .section:nth-of-type(4) td:first-child {
+                min-width: 100px;
+            }
+            
+            .section:nth-of-type(4) th:last-child,
+            .section:nth-of-type(4) td:last-child {
+                min-width: 200px;
+            }
         }
         
         /* 针对超小屏幕设备的优化 */
@@ -1108,37 +1139,40 @@
             <h2>四、成就奖励机制（能力+业绩双挂钩）</h2>
             <p>以"能力提升值+业务贡献值"为双维度，每期单独奖励，激发小步快跑动力。</p>
             
-            <table>
-                <thead>
-                    <tr>
-                        <th>奖励类型</th>
-                        <th>规则设计</th>
-                        <th>示例（首期）</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>能力突破奖</td>
-                        <td>全员投票，最佳能力突破奖励XX元。</td>
-                        <td>某成员能力提升显著，获XX元。</td>
-                    </tr>
-                    <tr>
-                        <td>业务增量奖</td>
-                        <td>按签约客户数/金额奖励。</td>
-                        <td>某客户经理签约X家客户，获XX元。</td>
-                    </tr>
-                    <tr>
-                        <td>标杆案例奖</td>
-                        <td>每期输出可复制的标杆案例。</td>
-                        <td>某小组输出首期标杆案例，获XX元。</td>
-                    </tr>
-                    <tr>
-                        <td>团队协作奖</td>
-                        <td>团队协作完成从签约-交付-标杆全流程。</td>
-                        <td>团队协作达标，获XX元团队奖。</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>奖励类型</th>
+                            <th>规则设计</th>
+                            <th>示例（首期）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>能力突破奖</td>
+                            <td>全员投票，最佳能力突破奖励XX元。</td>
+                            <td>某成员能力提升显著，获XX元。</td>
+                        </tr>
+                        <tr>
+                            <td>业务增量奖</td>
+                            <td>按签约客户数/金额奖励。</td>
+                            <td>某客户经理签约X家客户，获XX元。</td>
+                        </tr>
+                        <tr>
+                            <td>标杆案例奖</td>
+                            <td>每期输出可复制的标杆案例。</td>
+                            <td>某小组输出首期标杆案例，获XX元。</td>
+                        </tr>
+                        <tr>
+                            <td>团队协作奖</td>
+                            <td>团队协作完成从签约-交付-标杆全流程。</td>
+                            <td>团队协作达标，获XX元团队奖。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="scroll-indicator">← 左右滑动查看更多 →</div>
+            </div>
         </div>
         
         <div class="section">
