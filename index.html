@@ -120,6 +120,15 @@
             padding: 8px 20px;
             background: rgba(255,255,255,0.1);
             border-radius: 20px;
+            margin: 0;
+        }
+        
+        header .author {
+            font-size: 1em;
+            margin-top: 15px;
+            background: none;
+            font-style: italic;
+            opacity: 0.8;
         }
         
         .section {
@@ -152,10 +161,18 @@
             box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        h2 {
+        .section > * {
+            margin-bottom: var(--spacing-desktop);
+        }
+        
+        .section > *:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section h2 {
             color: var(--primary-blue);
             font-size: var(--h2-size-desktop);
-            margin-bottom: 30px;
+            margin-bottom: calc(var(--spacing-desktop) * 1.2);
             padding-bottom: 15px;
             border-bottom: 2px solid var(--accent-blue);
             position: relative;
@@ -163,7 +180,7 @@
             align-items: center;
         }
         
-        h2::before {
+        .section h2::before {
             content: '';
             display: inline-block;
             width: 24px;
@@ -178,20 +195,29 @@
             -webkit-mask-repeat: no-repeat;
         }
         
-        h3 {
+        .section h3 {
             color: var(--dark-blue);
             font-size: var(--h3-size-desktop);
-            margin: 30px 0 20px;
+            margin-top: calc(var(--spacing-desktop) * 1.5);
+            margin-bottom: calc(var(--spacing-desktop) * 0.8);
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        h3::before {
+        .section h3::before {
             content: '◆';
             color: var(--accent-blue);
             font-size: 0.8em;
+        }
+        
+        .section p {
+            margin-bottom: calc(var(--spacing-desktop) * 0.8);
+        }
+        
+        .section ul {
+            margin-bottom: calc(var(--spacing-desktop) * 0.8);
         }
         
         ul {
@@ -231,7 +257,7 @@
             background: var(--card-bg);
             border-radius: var(--border-radius);
             padding: var(--spacing-desktop);
-            margin: var(--spacing-desktop) 0;
+            margin: calc(var(--spacing-desktop) * 0.8) 0;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
             position: relative;
@@ -287,7 +313,7 @@
         table {
             display: table;
             width: 100%;
-            margin: var(--spacing-desktop) 0;
+            margin: calc(var(--spacing-desktop) * 0.8) 0;
             border-radius: var(--border-radius);
             overflow-x: auto;
             white-space: normal;
@@ -497,13 +523,38 @@
                 margin-bottom: var(--spacing-tablet);
             }
             
-            .stats-grid {
-                gap: var(--spacing-tablet);
-                margin: var(--spacing-tablet) 0;
+            .section > * {
+                margin-bottom: var(--spacing-tablet);
+            }
+            
+            .section h2 {
+                margin-bottom: calc(var(--spacing-tablet) * 1.2);
+            }
+            
+            .section h3 {
+                margin-top: calc(var(--spacing-tablet) * 1.5);
+                margin-bottom: calc(var(--spacing-tablet) * 0.8);
+            }
+            
+            .section p {
+                margin-bottom: calc(var(--spacing-tablet) * 0.8);
+            }
+            
+            .section ul {
+                margin-bottom: calc(var(--spacing-tablet) * 0.8);
             }
             
             .card {
                 padding: var(--spacing-tablet);
+                margin: calc(var(--spacing-tablet) * 0.8) 0;
+            }
+            
+            .table-container {
+                margin: calc(var(--spacing-tablet) * 0.8) 0;
+            }
+            
+            .stats-grid {
+                gap: var(--spacing-tablet);
                 margin: var(--spacing-tablet) 0;
             }
         }
@@ -532,6 +583,40 @@
                 padding: var(--spacing-mobile);
                 margin-bottom: var(--spacing-mobile);
                 border-radius: calc(var(--border-radius) / 2);
+            }
+            
+            .section > * {
+                margin-bottom: var(--spacing-mobile);
+            }
+            
+            .section h2 {
+                margin-bottom: calc(var(--spacing-mobile) * 1.2);
+            }
+            
+            .section h3 {
+                margin-top: calc(var(--spacing-mobile) * 1.5);
+                margin-bottom: calc(var(--spacing-mobile) * 0.8);
+            }
+            
+            .section p {
+                margin-bottom: calc(var(--spacing-mobile) * 0.8);
+            }
+            
+            .section ul {
+                margin-bottom: calc(var(--spacing-mobile) * 0.8);
+            }
+            
+            .card {
+                margin: calc(var(--spacing-mobile) * 0.8) 0;
+            }
+            
+            .table-container {
+                margin: calc(var(--spacing-mobile) * 0.8) 0;
+            }
+            
+            header .author {
+                font-size: 0.9em;
+                margin-top: 10px;
             }
             
             .stats-grid {
@@ -917,6 +1002,7 @@
         <header>
             <h1>广州数字营销事业部2025年新媒体+AI能力训战方案</h1>
             <p>小步快跑·体系化版</p>
+            <p class="author">by AI+陈加林</p>
         </header>
         
         <div class="section">
