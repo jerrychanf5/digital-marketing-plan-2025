@@ -560,7 +560,6 @@
             .table-container {
                 margin: 15px -15px;
                 width: calc(100% + 30px);
-                border-radius: 0;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
                 position: relative;
@@ -568,62 +567,66 @@
             }
             
             table {
-                background: var(--card-bg);
-                margin: 0;
+                display: table;
                 min-width: 800px;
+                width: 100%;
+                background: var(--card-bg);
             }
             
-            thead th {
-                background: var(--gradient-blue);
+            thead {
                 position: sticky;
                 top: 0;
-                z-index: 1;
+                z-index: 2;
+                background: var(--gradient-blue);
             }
             
             th, td {
+                min-width: 120px;
                 padding: 12px;
-                font-size: 0.9em;
                 white-space: normal;
-                line-height: 1.4;
+                word-break: break-word;
                 background: transparent;
             }
             
-            /* 移除表格容器的渐变遮罩 */
+            /* 成就奖励机制表格的特定样式 */
+            .section:nth-of-type(4) .table-container {
+                margin: 15px -15px;
+                width: calc(100% + 30px);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                position: relative;
+                display: block;
+            }
+            
+            .section:nth-of-type(4) table {
+                min-width: 600px;
+                width: 100%;
+            }
+            
+            .section:nth-of-type(4) th,
+            .section:nth-of-type(4) td {
+                min-width: 150px;
+            }
+            
+            .section:nth-of-type(4) th:first-child,
+            .section:nth-of-type(4) td:first-child {
+                min-width: 100px;
+            }
+            
+            .section:nth-of-type(4) th:last-child,
+            .section:nth-of-type(4) td:last-child {
+                min-width: 200px;
+            }
+            
+            /* 移除可能影响滚动的样式 */
             .table-container::after {
                 display: none;
             }
             
-            /* 确保所有表格都可以横向滚动 */
-            .section table {
-                display: table;
-                width: 100%;
-                min-width: 800px;
-                overflow-x: auto;
-            }
-            
-            /* 调整表格列宽 */
-            .section table th:nth-child(1),
-            .section table td:nth-child(1) {
-                min-width: 100px;
-                width: 100px;
-            }
-            
-            .section table th:nth-child(2),
-            .section table td:nth-child(2) {
-                min-width: 120px;
-                width: 120px;
-            }
-            
-            .section table th:nth-child(3),
-            .section table td:nth-child(3) {
-                min-width: 300px;
-                width: auto;
-            }
-            
-            .section table th:nth-child(4),
-            .section table td:nth-child(4) {
-                min-width: 200px;
-                width: auto;
+            /* 确保表格容器不会被其他样式覆盖 */
+            .section .table-container {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
             }
             
             .card {
@@ -660,37 +663,6 @@
             header p {
                 font-size: 1em;
                 padding: 6px 15px;
-            }
-            
-            /* 成就奖励机制表格的特定样式 */
-            .section:nth-of-type(4) .table-container {
-                margin: 15px -15px;
-                width: calc(100% + 30px);
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            .section:nth-of-type(4) table {
-                min-width: 600px;
-                width: 100%;
-            }
-            
-            .section:nth-of-type(4) th,
-            .section:nth-of-type(4) td {
-                min-width: 150px;
-                padding: 12px;
-                white-space: normal;
-                word-break: break-word;
-            }
-            
-            .section:nth-of-type(4) th:first-child,
-            .section:nth-of-type(4) td:first-child {
-                min-width: 100px;
-            }
-            
-            .section:nth-of-type(4) th:last-child,
-            .section:nth-of-type(4) td:last-child {
-                min-width: 200px;
             }
         }
         
@@ -876,7 +848,7 @@
             border-collapse: separate;
             border-spacing: 0;
             width: 100%;
-            min-width: 800px; /* 确保表格有足够的最小宽度 */
+            min-width: 800px;
             margin: 0;
         }
         
@@ -1171,7 +1143,6 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="scroll-indicator">← 左右滑动查看更多 →</div>
             </div>
         </div>
         
